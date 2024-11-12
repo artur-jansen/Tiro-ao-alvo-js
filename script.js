@@ -26,6 +26,8 @@ function exibeContador(evento) {
     
     if((x > xAleatorio - raio) && (x < xAleatorio + raio) && (y > yAleatorio - raio) && (y < yAleatorio + raio)) {
         i += 1;
+
+        desenhaCirculo(x, y, raio, 'blue');
     } else {
         i -= 1;
     }

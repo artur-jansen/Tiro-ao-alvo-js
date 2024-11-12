@@ -2,12 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Kodchasan", sans-serif;
+    color: #64F222;
+    text-shadow: 4px 4px rgba(4, 157, 191, 0.31);
+    --cor1: #049dbf;
+    --cor2: #1d2366;
+    --cor3: #22f233;
+    --cor4: #ff6700;
+    --cor5: #ffb300;
+    --cor6: #7955e6;
+    --cor7: #00d4bb;
+    --cor8: #f2e822;
+    --cor9: #f2226c;
 }
 
 body{
     height: 100vh;
     width: 100%;
+    background-image: url(./assets/fundo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: border-box;
 }
 
 main{
@@ -15,7 +31,7 @@ main{
 }
 
 header{
-    background-color: rgb(255, 111, 0);
+    background-color: var(--cor2);
     height: 60px;
     width: 100%;
     display: flex;
@@ -32,16 +48,25 @@ header{
 }
 
 canvas{
-    border: 3px solid rgb(255, 111, 0);
+    border: 3px solid var(--cor1);
     width: 400px;
     height: 400px;
+    background-color: #ffffff;
 }
 
 button{
     border: none;
     border-radius: 24px;
-    padding: 6px;
-    background-color: rgb(255, 111, 0);
+    padding: 1em;
+    background-color: var(--cor2);
     color: white;
     cursor: pointer;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    padding: 0.5em 0;
 }
