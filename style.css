@@ -60,6 +60,7 @@ button{
     padding: 1em;
     background-color: var(--cor2);
     color: white;
+    border: 2px solid;
     cursor: pointer;
 }
 
@@ -69,4 +70,45 @@ h1{
 
 h2{
     padding: 0.5em 0;
+}
+
+.pontos{
+    background-color: #00000058;
+    width: 30%;
+    border-radius: 24px;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.dificuldade{
+    background-color: #00000058;
+    width: 40%;
+    border-radius: 24px;
+    text-align: center;
+    margin: 1em 0 0.5em 0;
+}
+
+button:hover{
+    transition: 1s;
+    transform: translateY(-2px);
+    background-color: var(--cor1);
+}
+
+@media (max-width: 640px) {
+    .container-pontos{
+        margin-top: 2em;
+    }
+
+    .pontos{
+        width: 60%;
+    }
+    
+    .dificuldade{
+        width: 80%;
+    }
+    
+    canvas{
+        width: 350px;
+        height: 300px;
+    }
 }

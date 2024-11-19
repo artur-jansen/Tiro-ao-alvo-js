@@ -29,7 +29,7 @@ function exibeContador(evento) {
 
         desenhaCirculo(x, y, raio, 'blue');
     } else {
-        i -= 1;
+        i -= 0;
     }
 
     if(i < 0) {
