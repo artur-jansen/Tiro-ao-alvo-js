@@ -89,7 +89,9 @@ facil.addEventListener('click', function() {
     intervalo = setInterval(atualizaTela, 2500);
     medio.style.backgroundColor= 'rgb(255, 111, 0)';
     dificil.style.backgroundColor= 'rgb(255, 111, 0)';
-
+    facil.style.color= '#fff'
+    medio.style.color= '#fff'
+    dificil.style.color= '#fff'
     facil.style.backgroundColor= 'green';
 })
 
@@ -99,7 +101,9 @@ medio.addEventListener('click', function() {
     intervalo = setInterval(atualizaTela, 1200);
     facil.style.backgroundColor= 'rgb(255, 111, 0)';
     dificil.style.backgroundColor= 'rgb(255, 111, 0)';
-
+    facil.style.color= '#fff'
+    medio.style.color= '#fff'
+    dificil.style.color= '#fff'
     medio.style.backgroundColor= 'rgb(211, 183, 0)';
 })
 
@@ -108,7 +112,9 @@ dificil.addEventListener('click', function() {
     intervalo = setInterval(atualizaTela, 800);
     facil.style.backgroundColor= 'rgb(255, 111, 0)';
     medio.style.backgroundColor= 'rgb(255, 111, 0)';
-
+    facil.style.color= '#fff'
+    medio.style.color= '#fff'
+    dificil.style.color= '#fff'
     dificil.style.backgroundColor= 'red';
 })
 
