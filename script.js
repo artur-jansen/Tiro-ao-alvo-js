@@ -61,7 +61,7 @@ function desenhaCirculo(x, y, raio, cor) {
 
 function limpaTela() {
     pincel.clearRect(0, 0, tela.width, tela.height);
-    pincel.strokeStyle = 'rgba(100, 100, 100, 0.3)';
+    pincel.strokeStyle = 'rgba(100, 100, 100, 0.0)';
     pincel.strokeRect(
         tela.width * 0.15,
         tela.height * 0.15,
