@@ -8,12 +8,12 @@ let facil = document.querySelector('.facil');
 let medio = document.querySelector('.medio');
 let dificil = document.querySelector('.dificil');
 
-
 function ajustarCanvas() {
     tela.width = tela.offsetWidth;
-    tela.height = tela.offsetHeight
+    tela.height = tela.offsetHeight;
     pincel.fillStyle = 'lightgray';
     pincel.fillRect(0, 0, tela.width, tela.height);
+
 }
 
 window.addEventListener('resize', ajustarCanvas);
@@ -24,12 +24,10 @@ function exibeContador(evento) {
     var x = evento.pageX - tela.offsetLeft;
     var y = evento.pageY - tela.offsetTop;
     
-    if((x > xAleatorio - raio) && (x < xAleatorio + raio) && (y > yAleatorio - raio) && (y < yAleatorio + raio)) {
+    if((x > xAleatorio - raio) && (x < xAleatorio + raio) && 
+       (y > yAleatorio - raio) && (y < yAleatorio + raio)) {
         i += 1;
-
         desenhaCirculo(x, y, raio, 'blue');
-    } else {
-        i -= 0;
     }
 
     if(i < 0) {
@@ -63,6 +61,13 @@ function desenhaCirculo(x, y, raio, cor) {
 
 function limpaTela() {
     pincel.clearRect(0, 0, tela.width, tela.height);
+    pincel.strokeStyle = 'rgba(100, 100, 100, 0.3)';
+    pincel.strokeRect(
+        tela.width * 0.15,
+        tela.height * 0.15,
+        tela.width * 0.7,
+        tela.height * 0.7
+    );
 }
 
 function desenhaAlvo(x, y) {
@@ -72,7 +77,9 @@ function desenhaAlvo(x, y) {
 }
 
 function sortearPosicao(maximo) {
-    return Math.floor(Math.random() * maximo)
+    const areaUtil = maximo * 0.7;
+    const margem = maximo * 0.15;
+    return Math.floor(Math.random() * areaUtil) + margem;
 }
 
 function atualizaTela() {
@@ -86,39 +93,36 @@ let intervalo;
 
 facil.addEventListener('click', function() {
     clearInterval(intervalo);
-    intervalo = setInterval(atualizaTela, 2500);
-    medio.style.backgroundColor= 'rgb(255, 111, 0)';
-    dificil.style.backgroundColor= 'rgb(255, 111, 0)';
-    facil.style.color= '#fff'
-    medio.style.color= '#fff'
-    dificil.style.color= '#fff'
-    facil.style.backgroundColor= 'green';
+    intervalo = setInterval(atualizaTela, 2000);
+    medio.style.backgroundColor = 'rgb(255, 111, 0)';
+    dificil.style.backgroundColor = 'rgb(255, 111, 0)';
+    facil.style.color = '#fff';
+    medio.style.color = '#fff';
+    dificil.style.color = '#fff';
+    facil.style.backgroundColor = 'green';
 })
-
 
 medio.addEventListener('click', function() {
     clearInterval(intervalo);
-    intervalo = setInterval(atualizaTela, 1200);
-    facil.style.backgroundColor= 'rgb(255, 111, 0)';
-    dificil.style.backgroundColor= 'rgb(255, 111, 0)';
-    facil.style.color= '#fff'
-    medio.style.color= '#fff'
-    dificil.style.color= '#fff'
-    medio.style.backgroundColor= 'rgb(211, 183, 0)';
+    intervalo = setInterval(atualizaTela, 1100);
+    facil.style.backgroundColor = 'rgb(255, 111, 0)';
+    dificil.style.backgroundColor = 'rgb(255, 111, 0)';
+    facil.style.color = '#fff';
+    medio.style.color = '#fff';
+    dificil.style.color = '#fff';
+    medio.style.backgroundColor = 'rgb(211, 183, 0)';
 })
 
 dificil.addEventListener('click', function() {
     clearInterval(intervalo);
     intervalo = setInterval(atualizaTela, 800);
-    facil.style.backgroundColor= 'rgb(255, 111, 0)';
-    medio.style.backgroundColor= 'rgb(255, 111, 0)';
-    facil.style.color= '#fff'
-    medio.style.color= '#fff'
-    dificil.style.color= '#fff'
-    dificil.style.backgroundColor= 'red';
+    facil.style.backgroundColor = 'rgb(255, 111, 0)';
+    medio.style.backgroundColor = 'rgb(255, 111, 0)';
+    facil.style.color = '#fff';
+    medio.style.color = '#fff';
+    dificil.style.color = '#fff';
+    dificil.style.backgroundColor = 'red';
 })
-
-
 
 tela.addEventListener('click', function(evento) {
     exibeContador(evento);
